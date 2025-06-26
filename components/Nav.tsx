@@ -11,7 +11,14 @@ import {
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
-
+import {
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
+import { Button } from "./ui/button";
 export function NavbarDemo() {
   const navItems = [
     {
@@ -32,15 +39,24 @@ export function NavbarDemo() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="relative w-full">
+    <div className="fixed w-full py-2 mt-2">
       <Navbar>
         {/* Desktop Navigation */}
         <NavBody>
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="primary">Book a call</NavbarButton>
-            <NavbarButton variant="secondary">Sign in</NavbarButton>
+           <SignedOut>
+              <SignInButton>
+                <NavbarButton variant="primary">
+                  Sign in
+                </NavbarButton>
+                  </SignInButton>
+           </SignedOut>
+           <SignedIn>
+            <UserButton
+            />
+           </SignedIn>
           </div>
         </NavBody>
 
@@ -64,18 +80,21 @@ export function NavbarDemo() {
               </a>
             ))}
             <div className="flex w-full flex-col gap-4">
+              <SignedOut>
+
+                <SignInButton>
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full">
-                Login
+                  Sign In
               </NavbarButton>
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full">
-                Book a call
-              </NavbarButton>
+                </SignInButton>
+              </SignedOut>
+              <SignedIn>
+                <UserButton
+                  />
+              </SignedIn>
             </div>
           </MobileNavMenu>
         </MobileNav>
