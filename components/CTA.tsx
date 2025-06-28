@@ -10,7 +10,7 @@ const Cta = () => {
                 Build and Personalize Learning Companion
             </h2>
             <p>Pick a name, subject, voice, & personality — and start learning through voice conversations that feel natural and fun.</p>
-            <Image src="images/cta.svg" alt="cta" width={362} height={232} />
+            <Image src="/images/cta.png" alt="cta" width={260} height={232} className="pointer-events-none select-none" />
             <button className="btn-primary bg-neutral-100 text-black">
                 <PlusCircleIcon/>
                 <Link href="/companions/new">

@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { IconMenu2, IconX } from "@tabler/icons-react";
-import { AirVent, AxeIcon, GraduationCap } from "lucide-react";
+import { IconMenu2, IconRobot, IconX } from "@tabler/icons-react";
+import { AirVent, AxeIcon, GraduationCap, Group, Users, Users2Icon } from "lucide-react";
 import {
   motion,
   AnimatePresence,
@@ -9,6 +9,7 @@ import {
   useMotionValueEvent,
 } from "motion/react";
 import { Teachers } from "next/font/google";
+import Image from "next/image";
 
 import React, { useRef, useState } from "react";
 
@@ -235,12 +236,19 @@ export const MobileNavToggle = ({
 export const NavbarLogo = () => {
   return (
     <a
-      href="#"
+      href="/"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-lg font-normal text-black"
     >
-      
-      <span className="font-medium text-black dark:text-white">companion
-        <span className="text-transparent bg-clip-text bg-gradient-to-tl from-pink-500 via-red-500 to-yellow-500 font-mono">AI</span></span>
+      <Image
+        src="/images/logo.svg"
+        alt="Logo"
+        width={40}
+        height={40}
+        className=" drop-shadow-2xl"
+      />
+      <span className="hidden font-bold text-black lg:inline-block text-2xl">
+        Companion<span className="bg-gradient-to-tl from-pink-500 via-red-500 to-yellow-500 text-transparent bg-clip-text">AI</span>
+      </span>
     </a>
   );
 };

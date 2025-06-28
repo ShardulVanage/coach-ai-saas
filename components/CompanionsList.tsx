@@ -21,9 +21,9 @@ interface CompanionsListProps {
 const CompanionsList = ({ title, companions, classNames }: CompanionsListProps) => {
     return (
         <article className={cn('companion-list', classNames)}>
-            <h2 className="font-bold text-3xl">Recent Sessions</h2>
+            <h2 className="font-bold text-3xl">{title}</h2>
 
-            <Table>
+            <Table >
                 <TableHeader>
                     <TableRow>
                         <TableHead className="text-lg w-2/3">Lessons</TableHead>
@@ -37,7 +37,7 @@ const CompanionsList = ({ title, companions, classNames }: CompanionsListProps) 
                             <TableCell>
                                 <Link href={`/companions/${id}`}>
                                     <div className="flex items-center gap-2">
-                                        <div className="size-[72px] flex items-center justify-center rounded-lg max-md:hidden" style={{ backgroundColor: getSubjectColor(subject) }}>
+                                        <div className="size-[72px] flex items-center justify-center rounded-lg max-md:hidden border shadow" >
                                             <Image
                                                 src={`/icons/${subject}.svg`}
                                                 alt={subject}
@@ -56,10 +56,10 @@ const CompanionsList = ({ title, companions, classNames }: CompanionsListProps) 
                                 </Link>
                             </TableCell>
                             <TableCell>
-                                <div className="subject-badge w-fit max-md:hidden">
+                                <div className="subject-badge w-fit max-md:hidden bg-gradient-to-tl from-pink-500 via-red-500 to-yellow-500">
                                     {subject}
                                 </div>
-                                <div className="flex items-center justify-center rounded-lg w-fit p-2 md:hidden" style={{backgroundColor: getSubjectColor(subject)}}>
+                                <div className="flex items-center justify-center rounded-lg w-fit p-2 md:hidden border shadow">
                             <Image
                                 src={`/icons/${subject}.svg`}
                                 alt={subject}

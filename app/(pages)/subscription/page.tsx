@@ -3,11 +3,11 @@ import React from 'react'
 
 const Subscription = () => {
   return (
-    <div className='flex  items-center justify-center min-h-screen bg-gray-100 '>
+    <main className='pt-24 '>
      
         <PricingTable />
       
-    </div>
+    </main>
   )
 }
 
