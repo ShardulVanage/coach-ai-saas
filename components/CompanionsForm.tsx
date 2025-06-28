@@ -201,9 +201,11 @@ const CompanionForm = () => {
                             <FormControl>
                                 <Input
                                     type="number"
-                                    placeholder="15"
+                                    placeholder="1-5 minutes"
                                     {...field}
                                     className="input"
+                                    max={5}
+                                    min={1}
                                 />
                             </FormControl>
                             <FormMessage />

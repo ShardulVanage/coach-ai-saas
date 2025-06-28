@@ -5,6 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import CompanionForm from "@/components/CompanionsForm";
 
+// Add this to force dynamic rendering
+export const dynamic = 'force-dynamic'
+
 const NewCompanion = async () => {
     const { userId } = await auth();
     if(!userId) redirect('/sign-in');
